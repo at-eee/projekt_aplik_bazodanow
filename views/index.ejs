@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('./head.ejs') %>
+    </head>
+    <body>
+        <h1> <%= title %> </h1>
+        <%= text %>
+
+        <div>
+            <a href="/animals"> Animals list </a>
+        </div>
+        <div>
+            <a href="/login"> Log in </a>
+        </div>
+
+        <form action="/login/logout?_method=DELETE" method="POST">
+            <button type="submit"> Log Out </button>
+        </form>
+    </body>
+</html>

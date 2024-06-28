@@ -1,0 +1,15 @@
+body {
+    /*font-size: 2rem; rem = root-EleMent*/
+    color: #00ACAC;
+    background-color: Lightgray;
+}
+
+p{
+   color: black;
+   font-size: 0.75rem;
+}
+
+/*fn like: field-name*/
+fn{ 
+   color: black;
+}

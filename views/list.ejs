@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('./head.ejs') %>
+    </head>
+    <body>
+        <% if(sortByLatin === true){ %>
+            <h2>All animals by latin name:</h2>
+            <div>
+                <a href="/animals"> Sort by english names </a>
+            </div>
+            <% }else{ %>
+            <h2>All animals by english name:</h2>
+            <div>
+                <a href="/animals/byLatin"> Sort by latin names </a>
+            </div>
+        <% } %>
+        <ul>
+            <% if(sortByLatin === true){ %>
+                <% for(let i = 0; i<items.length; i++){ %>
+                    <li>
+                        <a href="/animals/<%= items[i].id %>"><%= items[i].latinName %></a>
+                    </li>
+                <% } %>
+            <% }else{ %>
+                <% for(let i = 0; i<items.length; i++){ %>
+                    <li>
+                        <a href="/animals/<%= items[i].id %>"><%= items[i].englishName %></a>
+                    </li>
+                <% } %>
+            <% } %>
+        </ul>
+        <div>
+            <a href="/animals/create"> Add new animal to list (you must be logged in!!!) </a>
+        </div>
+        <div>
+            <a href="/"> Back to Homepage </a>
+        </div>
+    </body>
+</html>

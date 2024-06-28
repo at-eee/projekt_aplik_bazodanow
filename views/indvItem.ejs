@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('./head.ejs', {title: animal.englishName}) %>
+    </head>
+    <body>
+        <div>
+            <fn>English name:</fn> <b><%= animal.englishName %></b>
+        </div>
+        <div>
+            <fn>Latin name:</fn> <b><%= animal.latinName %></b>
+        </div>
+        <div>
+            <p>Last changes by: <%= animal.author.username %></p>
+        </div>
+        <div>
+            <a href="/animals/<%= animal.id %>/edit"> Edit animal's info </a>
+        </div>
+        <div>
+            <a href="/animals"> Back to items list </a>
+        </div>
+        
+    </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('./head.ejs') %>
+    </head>
+    <body>
+        <% if(isRegister === true){ %>
+            <form method="post" action="/login/register">
+          <% } else{ %>  
+            <form method="post" action="/login">
+        <% } %>
+            <div>
+                Username: <input type="text" name="username" required/>
+            </div>
+            <% if(isRegister === true){ %>
+                <div>
+                    Email: <input type="text" name="email" required/>
+                </div>
+            <% } %>
+            <div>
+                Password: <input type="password" name="password" required/>
+            </div>
+            <div>
+                <% if(isRegister === true){ %>
+                    <button type="submit"> Register </button>
+                  <% } else{ %>  
+                    <button type="submit"> Login </button>
+                <% } %>
+            </div>
+        </form>
+        <div>
+        <!-- Describes errors for logging in (passport.js with express-flash messages): -->
+        <% if(messages.error){ %>
+            <%= messages.error %>
+        <% } %>
+        <!-- Describes errors for signing in (registration - handled by error handling middleware): -->
+        <% if(errMsg){ %>
+            <%= errMsg %>
+        <% } %>
+        </div>
+        <% if(isRegister === true){ %>
+            <a href="/login">Log in</a>
+          <% } else{ %>  
+            <a href="/login/register">Register</a>
+        <% } %>
+        <div>
+            <a href="/"> Back to Homepage </a>
+        </div>
+    </body>
+</html>

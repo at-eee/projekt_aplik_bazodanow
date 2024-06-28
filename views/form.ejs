@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('./head.ejs') %>
+    </head>
+    <body>
+        <h2> <%= title %> </h2>
+        <form method="post" action="<%= redirect %>">
+            <div>
+                English name: <input type="text" name="animal_englishName" value="<%= englishName %>" required/>
+            </div>
+            <div>
+                Latin (scientific) name: <input type="text" name="animal_latinName" value="<%= latinName %>" required/>
+            </div>
+            <div>
+                <button type="submit"> Save </button>
+            </div>
+        </form>
+        <div>
+            <%= errMsg %>
+        </div>
+        <div>
+            <a href="/animals"> Back to animals list </a>
+        </div>
+        <% if(isEditForm === true){ %>
+            <div>
+                <a href="/animals/<%= id %>/delete"> Delete animal </a>
+            </div>
+        <% } %>
+    </body>
+</html>
